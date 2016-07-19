@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>ENTRY PAGE TO THE GREATEST SITER EVER</title>
-</head>
-<body>
-   <br />
-   <br />
-   <br />
-   <center><h1>CLICK HERE IF YOU WANT TO</h1></center>
-   <center><h2><a href="page.html">ENTER THE CAMP</a></h3></center>
-   </body>
+    <head>
+        <title>Index Page</title>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/automata.css" rel="stylesheet">
+
+        <!-- SWC Icon -->
+        <link rel="shortcut icon" href="img/icon.png">
+
+    </head>
+    <body onload="load();">
+        <div class="container" align="center">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Rules</h3>
+
+                    Born: 1 2 3 4 5 6 7 8<br>
+                    <input type="checkbox" class="life" value="1">
+                    <input type="checkbox" class="life" value="2">
+                    <input type="checkbox" class="life" value="3" checked="checked">
+                    <input type="checkbox" class="life" value="4">
+                    <input type="checkbox" class="life" value="5">
+                    <input type="checkbox" class="life" value="6">
+                    <input type="checkbox" class="life" value="7">
+                    <input type="checkbox" class="life" value="8">
+                    <br>
+                    Survive: 1 2 3 4 5 6 7 8<br>
+                    <input type="checkbox" class="death" value="1">
+                    <input type="checkbox" class="death" value="2" checked="checked">
+                    <input type="checkbox" class="death" value="3" checked="checked">
+                    <input type="checkbox" class="death" value="4">
+                    <input type="checkbox" class="death" value="5">
+                    <input type="checkbox" class="death" value="6">
+                    <input type="checkbox" class="death" value="7">
+                    <input type="checkbox" class="death" value="8">
+                    <br>
+                    <button onclick="setRules()" class="bg-primary">Set New Rules</button>
+                </div>
+                <div class="col-md-6">
+                    <h1>Cellular Automata</h1>
+                    <canvas id="board" width="500" height="500"  style="border:1px solid #d3d3d3;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <button onclick="step()" class="bg-primary controls">Step</button>
+                            <button id="play" class="bg-primary controls">play</button>
+                            <button id="pause" class="bg-primary controls">pause</button>
+                            <button onclick="clear()" class="bg-primary controls">clear</button>
+                            <button onclick="rand()" class="bg-primary controls">rand</button>
+                            <button onclick="seed()" class="bg-primary controls">seed</button>
+                            <button onclick="city()" class="bg-primary controls">city</button>
+                            <!--<button onclick="country()" class="bg-primary controls">country</button>-->
+                        </div>
+                        <div class="col-md-6">
+                            <lable for="speed">Speed: <--fast       slow--></lable>
+                            <input id="speed" class="slider" type="range" min="100" max="2000" value="100" step="100"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h3>Info</h3>
+                    <p>Imagine each square is a cell. A Black square is "alive" and a grey square is "dead"
+                    These cells have special rules for when they become alive, and when they die. The default ruleset is called "Conway's Game of Life" its notation would be B3/S23 (Born: 3/ Survive: 2, 3)</p>
+                    <h4>Common Rules</h4>
+                    <p>High Life: B36/S23</p>
+                    <p>Replicator: B1357/S1357</p>
+                    <p>Day & Night: B3678/S34678</p>
+                    <p>Amoeba: B1358/S357</p>
+                    <p>Walled Cities: B2345/S45678</p>
+                </div>
+            </div>
+        </div>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/automataInJs.js"></script>
+        <!-- <script src="js/automataCities.js"></script> -->
+    </body>
 </html>
