@@ -43,12 +43,6 @@ function load() {
     cells[1][3].gen = 1;
     cells[3][2].gen = 1;
     cells[2][1].gen = 1;
-    cells[3][3].buffGen = 1;
-    cells[2][3].buffGen = 1;
-    cells[1][3].buffGen = 1;
-    cells[3][2].buffGen = 1;
-    cells[2][1].buffGen = 1;
-
     setRules();
     draw(true);
 
@@ -69,15 +63,35 @@ function draw(flag) {
 
             if (cells[i][j].gen === 1) {
                 ctx.beginPath();
-                ctx.fillStyle = "#ff0";
+                ctx.fillStyle = "#e50019";
             }
             if (cells[i][j].gen === 2) {
                 ctx.beginPath();
-                ctx.fillStyle = "#f60";
+                ctx.fillStyle = "#c40e30";
             }
             if (cells[i][j].gen === 3) {
                 ctx.beginPath();
-                ctx.fillStyle = "#f00";
+                ctx.fillStyle = "#a31c48";
+            }
+            if (cells[i][j].gen === 4) {
+                ctx.beginPath();
+                ctx.fillStyle = "#822A60";
+            }
+            if (cells[i][j].gen === 5) {
+                ctx.beginPath();
+                ctx.fillStyle = "#623977";
+            }
+            if (cells[i][j].gen === 6) {
+                ctx.beginPath();
+                ctx.fillStyle = "#41478f";
+            }
+            if (cells[i][j].gen === 7) {
+                ctx.beginPath();
+                ctx.fillStyle = "#2055a7";
+            }
+            if (cells[i][j].gen === 8) {
+                ctx.beginPath();
+                ctx.fillStyle = "#0064bf";
             }
 
             ctx.rect(i * scale, j * scale, scale, scale);
@@ -109,18 +123,24 @@ function lifeDeath(x, y) {
         for (var j = 0; j < continueArray.length; j++) {
             if (numNeighbors === continueArray[j]) {
                 cont = true;
+               //  cells[x][y].buffGen = cells[x][y].buffGen + 1;
+               //  if (cells[x][y].buffGen === 7){
+               //     cells[x][y].buffGen = 1;
+               //  }
+                if (cells[x][y].buffGen !== 8){
+                  cells[x][y].buffGen = cells[x][y].buffGen + 1;
+               }
             }
         }
         if (cont === false) {
             cells[x][y].buffState = 0;
-            cells[x][y].Buffgen = 0;
-        } else if(cells[x][y].gen < 3){
-           cells[x][y].Buffgen = cells[x][y].Buffgen + 1;
-        }
+            cells[x][y].buffGen = 0;
+         }
     } else if (cells[x][y].state === 0) {
         for (var i = 0; i < lifeArray.length; i++) {
             if (numNeighbors === lifeArray[i]) {
                 cells[x][y].buffState = 1;
+                cells[x][y].buffGen = 1;
                 break;
             }
         }
@@ -132,7 +152,6 @@ function update() {
         for (var j = 1; j < cells.length - 1; j++) {
             cells[i][j].state = cells[i][j].buffState;
             cells[i][j].gen = cells[i][j].buffGen;
-
         }
     }
 }
@@ -181,17 +200,15 @@ function findCell(e) {
 
 function rand() {
 
-    for (var i = 1; i < cells.length - 1; i++) {
-        for (var j = 1; j < cells.length - 1; j++) {
-            cells[i][j].buffState = 0;
-            cells[i][j].state = cells[i][j].buffState;
-        }
-    }
+    clear();
 
     for (var i = 1; i < cells.length - 1; i++) {
         for (var j = 1; j < cells.length - 1; j++) {
-            cells[i][j].buffState = Math.round(Math.random());
+            var state = Math.round(Math.random());
+            cells[i][j].buffState = state;
+            cells[i][j].buffGen = state;
             cells[i][j].state = cells[i][j].buffState;
+            cells[i][j].gen = cells[i][j].buffGen;
         }
     }
     draw(false);
@@ -201,8 +218,9 @@ function clear(){
    for (var i = 1; i < cells.length - 1; i++) {
       for (var j = 1; j < cells.length - 1; j++) {
            cells[i][j].buffState = 0;
+           cells[i][j].state = 0;
+           cells[i][j].buffGen = 0;
            cells[i][j].gen = 0;
-           cells[i][j].state = cells[i][j].buffState;
       }
    }
 }
@@ -213,7 +231,10 @@ function seed() {
 
     for (var i = 45; i < 55; i++) {
         for (var j = 45; j < 55; j++) {
-            cells[i][j].buffState = Math.round(Math.random());
+           var state = Math.round(Math.random());
+            cells[i][j].buffState = state;
+            cells[i][j].buffGen = state;
+            cells[i][j].gen = cells[i][j].buffGen;
             cells[i][j].state = cells[i][j].buffState;
         }
     }

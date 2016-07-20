@@ -59,6 +59,10 @@ function draw(flag) {
                 ctx.beginPath();
                 ctx.fillStyle = "black";
             }
+            // if (neighbors(i, j) === 8) {
+            //     ctx.beginPath();
+            //     ctx.fillStyle = "red";
+            // }
 
             ctx.rect(i * scale, j * scale, scale, scale);
             ctx.fill();
