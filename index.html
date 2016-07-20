@@ -19,24 +19,24 @@
                     <h3>Rules</h3>
 
                     Born:<br>
-                    1:<input type="checkbox" class="life" value="1">
-                    2:<input type="checkbox" class="life" value="2">
-                    3:<input type="checkbox" class="life" value="3" checked="checked">
-                    4:<input type="checkbox" class="life" value="4">
-                    5:<input type="checkbox" class="life" value="5">
-                    6:<input type="checkbox" class="life" value="6">
-                    7:<input type="checkbox" class="life" value="7">
-                    8:<input type="checkbox" class="life" value="8">
+                    1:<input type="checkbox" class="life" id="l1" value="1">
+                    2:<input type="checkbox" class="life" id="l2" value="2">
+                    3:<input type="checkbox" class="life" id="l3" value="3" checked="checked">
+                    4:<input type="checkbox" class="life" id="l4" value="4">
+                    5:<input type="checkbox" class="life" id="l5" value="5">
+                    6:<input type="checkbox" class="life" id="l6" value="6">
+                    7:<input type="checkbox" class="life" id="l7" value="7">
+                    8:<input type="checkbox" class="life" id="l8" value="8">
                     <br>
                     Survive:<br>
-                    1:<input type="checkbox" class="death" value="1">
-                    2:<input type="checkbox" class="death" value="2" checked="checked">
-                    3:<input type="checkbox" class="death" value="3" checked="checked">
-                    4:<input type="checkbox" class="death" value="4">
-                    5:<input type="checkbox" class="death" value="5">
-                    6:<input type="checkbox" class="death" value="6">
-                    7:<input type="checkbox" class="death" value="7">
-                    8:<input type="checkbox" class="death" value="8">
+                    1:<input type="checkbox" class="death" id="d1" value="1">
+                    2:<input type="checkbox" class="death" id="d2" value="2" checked="checked">
+                    3:<input type="checkbox" class="death" id="d3" value="3" checked="checked">
+                    4:<input type="checkbox" class="death" id="d4" value="4">
+                    5:<input type="checkbox" class="death" id="d5" value="5">
+                    6:<input type="checkbox" class="death" id="d6" value="6">
+                    7:<input type="checkbox" class="death" id="d7" value="7">
+                    8:<input type="checkbox" class="death" id="d8" value="8">
                     <br>
                     <button onclick="setRules()" class="bg-primary">Set New Rules</button>
                 </div>
@@ -68,11 +68,11 @@
                     <p>Imagine each square is a cell. A Black square is "alive" and a grey square is "dead"
                     These cells have special rules for when they become alive, and when they die. The default ruleset is called "Conway's Game of Life" its notation would be B3/S23 (Born: 3/ Survive: 2, 3)</p>
                     <h4>Common Rules</h4>
-                    <p>High Life: B36/S23</p>
-                    <p>Replicator: B1357/S1357</p>
-                    <p>Day & Night: B3678/S34678</p>
-                    <p>Maze: B3/S12345</p>
-                    <p>Walled Cities: B45678/S2345</p>
+                    <p><a onclick="highLife()" >High Life: B36/S23</a></p>
+                    <p><a onclick="replicator()">Replicator: B1357/S1357</a></p>
+                    <p><a onclick="dayNight()">Day & Night: B3678/S34678</a></p>
+                    <p><a onclick="maze()">Maze: B3/S12345</a></p>
+                    <p><a onclick="walledCities()">Walled Cities: B45678/S2345</a></p>
                 </div>
             </div>
         </div>
@@ -81,6 +81,7 @@
         <script src="js/bootstrap.min.js"></script>
         <!-- <script src="js/automataInJs.js"></script> -->
         <script src="js/automataColored.js"></script>
+        <script src="js/rules.js"></script>
         <!-- <script src="js/automataCities.js"></script> -->
     </body>
 </html>
