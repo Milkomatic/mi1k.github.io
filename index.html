@@ -1,87 +1,43 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Index Page</title>
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="A layout example that shows off a responsive product landing page.">
 
-        <!-- Custom styles for this template -->
-        <link href="css/automata.css" rel="stylesheet">
+   <title>Scotts Page </title>
 
-        <!-- SWC Icon -->
-        <link rel="shortcut icon" href="img/icon.png">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
-    </head>
-    <body onload="load();">
-        <div class="container" align="center">
-            <div class="row">
-                <div class="col-md-3">
-                    <h3>Rules</h3>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 
-                    Born:<br>
-                    1:<input type="checkbox" class="life" id="l1" value="1">
-                    2:<input type="checkbox" class="life" id="l2" value="2">
-                    3:<input type="checkbox" class="life" id="l3" value="3" checked="checked">
-                    4:<input type="checkbox" class="life" id="l4" value="4">
-                    5:<input type="checkbox" class="life" id="l5" value="5">
-                    6:<input type="checkbox" class="life" id="l6" value="6">
-                    7:<input type="checkbox" class="life" id="l7" value="7">
-                    8:<input type="checkbox" class="life" id="l8" value="8">
-                    <br>
-                    Survive:<br>
-                    1:<input type="checkbox" class="death" id="d1" value="1">
-                    2:<input type="checkbox" class="death" id="d2" value="2" checked="checked">
-                    3:<input type="checkbox" class="death" id="d3" value="3" checked="checked">
-                    4:<input type="checkbox" class="death" id="d4" value="4">
-                    5:<input type="checkbox" class="death" id="d5" value="5">
-                    6:<input type="checkbox" class="death" id="d6" value="6">
-                    7:<input type="checkbox" class="death" id="d7" value="7">
-                    8:<input type="checkbox" class="death" id="d8" value="8">
-                    <br>
-                    <button onclick="setRules()" class="bg-primary">Set New Rules</button>
-                </div>
-                <div class="col-md-6">
-                    <h1>Cellular Automata</h1>
-                    <canvas id="board" width="500" height="500"  style="border:1px solid #d3d3d3;">
-                        Your browser does not support the HTML5 canvas tag.</canvas>
+   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
-                    <div class="row">
+   <link rel="stylesheet" href="css/layouts/scottPage.css">
 
-                        <div class="col-md-6">
-                            <button onclick="step()" class="bg-primary controls">Step</button>
-                            <button id="play" class="bg-primary controls">play</button>
-                            <button id="pause" class="bg-primary controls">pause</button>
-                            <button onclick="load()" class="bg-primary controls">clear</button>
-                            <button onclick="rand()" class="bg-primary controls">rand</button>
-                            <button onclick="seed()" class="bg-primary controls">seed</button>
-                            <button onclick="city()" class="bg-primary controls">city</button>
-                            <!--<button onclick="country()" class="bg-primary controls">country</button>-->
-                        </div>
-                        <div class="col-md-6">
-                            <lable for="speed">Speed: <--fast       slow--></lable>
-                            <input id="speed" class="slider" type="range" min="100" max="2000" value="100" step="100"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h3>Info</h3>
-                    <p>Imagine each square is a cell. A Black square is "alive" and a grey square is "dead"
-                    These cells have special rules for when they become alive, and when they die. The default ruleset is called "Conway's Game of Life" its notation would be B3/S23 (Born: 3/ Survive: 2, 3)</p>
-                    <h4>Common Rules</h4>
-                    <p><a onclick="highLife()" >High Life: B36/S23</a></p>
-                    <p><a onclick="replicator()">Replicator: B1357/S1357</a></p>
-                    <p><a onclick="dayNight()">Day & Night: B3678/S34678</a></p>
-                    <p><a onclick="maze()">Maze: B3/S12345</a></p>
-                    <p><a onclick="walledCities()">Walled Cities: B45678/S2345</a></p>
-                </div>
-            </div>
-        </div>
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- <script src="js/automataInJs.js"></script> -->
-        <script src="js/automataColored.js"></script>
-        <script src="js/rules.js"></script>
-        <!-- <script src="js/automataCities.js"></script> -->
-    </body>
+</head>
+<body onload="generate()">
+   <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+         <a class="pure-menu-heading" href="">Landing Page</a>
+         <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="automata.html" class="pure-menu-link">Automata</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Source</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Network</a></li>
+         </ul>
+      </div>
+   </div>
+
+   <div class="splash-container">
+      <div class="splash">
+         <h1 class="splash-head">Scott Campbell</h1>
+         <p class="splash-subhead coderNameList1"></p>
+         <p class="splash-subhead coderNameList2"></p>
+         <p class="splash-subhead coderNameList3"></p>
+      </div>
+   </div>
+   <script src="js/jquery-1.11.1.min.js"></script>
+   <script src="js/coderNameList.js"></script>
+</body>
 </html>

@@ -1,11 +1,11 @@
-function highLife() {
+function life() {
    // B36/S23
    $("#l1").prop('checked', false);
    $("#l2").prop('checked', false);
    $("#l3").prop('checked', true);
    $("#l4").prop('checked', false);
    $("#l5").prop('checked', false);
-   $("#l6").prop('checked', true);
+   $("#l6").prop('checked', false);
    $("#l7").prop('checked', false);
    $("#l8").prop('checked', false);
    $("#d1").prop('checked', false);

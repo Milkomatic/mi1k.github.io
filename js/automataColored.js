@@ -166,7 +166,7 @@ $("#play").click(function () {
         return;
     timer = setInterval(function () {
         step();
-    }, $("#speed").val());
+    }, 100);
 });
 
 $("#pause").click(function () {
@@ -242,6 +242,9 @@ function seed() {
 }
 
 function city() {
+   clearInterval(timer);
+   timer = null;
+
     var citySize = Math.floor((Math.random() * 40) + 20);
     var outSize = Math.floor((Math.random() * 50) + 30);
 
@@ -264,6 +267,7 @@ function city() {
                 step();
                 counter++;
                 if (counter === outSize) {
+                   setRules()
                     clearInterval(out);
                 }
             }, 100);
