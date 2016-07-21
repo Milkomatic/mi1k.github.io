@@ -1,6 +1,6 @@
 var nameList1 = ["coder", "software developer", "cyberpunk", "programmer", "software engineer", "creator", "innovator", "pioneer" , "maker", "technologist", "software architect"];
 var nameList2 = ["coder", "software developer", "programmer", "creator", "hacker", "innovator", "pioneer", "maker", "technologist", "software engineer"];
-var nameList3 = ["coder", "software developer", "cyberpunk", "programmer", "hacker", "software engineer", "creator", "designer", "innovator", "pioneer"];
+var nameList3 = ["coder", "software developer", "programmer", "hacker", "software engineer", "creator", "designer", "innovator", "pioneer"];
 var nameList4 = ["coder", "programmer", "hacker", "creator", "software architect", "innovator", "pioneer", "maker", "technologist", "software developer"];
 
 function generate(){
