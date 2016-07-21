@@ -97,7 +97,7 @@ label {
     border-bottom: 3px solid white;
 }
 .home-menu {
-    background: #FFB558;
+    background: #FFa540;
 }
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
@@ -159,19 +159,19 @@ a:hover{
     height: 50%;
     margin: auto;
     position: absolute;
-    top: -5%; left: 0; bottom: 0; right: 0;
+    top: 0; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
 }
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-   background: #FFB558;
+   background: #FFa540;
     font-size: 20px;
     font-weight: bold;
     color: white;
     border: 7px solid white;
-    padding: 1em 1.6em;
+    padding: .5em 1.6em;
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
@@ -185,7 +185,8 @@ a:hover{
    font-size: 1.0em;
     color: white;
     letter-spacing: 0.05em;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
+    /*margin-bottom: 50px;*/
 }
 
 /*
@@ -226,7 +227,7 @@ a:hover{
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
-    background: #FFB558;
+    background: #FFa540;
     color: #aaa;
 }
 
