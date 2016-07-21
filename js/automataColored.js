@@ -17,7 +17,7 @@ var timer = null;
 var canvas = $("#board").get(0);
 var ctx = canvas.getContext("2d");
 var scale = 5;
-var cells = new Array(500 / scale);
+var cells = new Array((500 / scale)+2);
 
 
 function load() {
@@ -94,7 +94,7 @@ function draw(flag) {
                 ctx.fillStyle = "#0064bf";
             }
 
-            ctx.rect(i * scale, j * scale, scale, scale);
+            ctx.rect((i-1) * scale, (j-1) * scale, scale, scale);
             ctx.fill();
         }
     }
@@ -166,7 +166,7 @@ $("#play").click(function () {
         return;
     timer = setInterval(function () {
         step();
-    }, 100);
+    }, 50);
 });
 
 $("#pause").click(function () {

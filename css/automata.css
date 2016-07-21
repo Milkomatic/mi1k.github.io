@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Jul 18, 2016, 11:13:08 AM
     Author     : apprentice
 */
@@ -19,4 +19,17 @@ and open the template in the editor.
 .slider{
     width: 80% !important;
     /*margin-left: -10%;*/
+}
+body {
+   background-color: #85CEE3;
+   /*background-color: #7f8c8d;*/
+
+}
+
+p {
+   color: white;
+}
+
+.white-text {
+   color: white;
 }
