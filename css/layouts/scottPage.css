@@ -21,7 +21,15 @@ h4,
 h5,
 h6,
 label {
-    color: #34495e;
+    color: white;
+}
+
+.box-header {
+   align: center;
+   /*.color: white;*/
+   padding-top: 5%;
+   padding-bottom: 5%;
+   border: 3px solid #FFa540;
 }
 
 .pure-img-responsive {
