@@ -1,8 +1,7 @@
 /*
- * A slightly depreciated version of my cellular automation project
- * current version has colors, custom rules and premade rules. 
- * you can find the current version here:
- * scott.camp/automata.html
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
 function cell() {
@@ -60,6 +59,10 @@ function draw(flag) {
                 ctx.beginPath();
                 ctx.fillStyle = "black";
             }
+            // if (neighbors(i, j) === 8) {
+            //     ctx.beginPath();
+            //     ctx.fillStyle = "red";
+            // }
 
             ctx.rect(i * scale, j * scale, scale, scale);
             ctx.fill();
@@ -204,6 +207,7 @@ function city() {
 
     var counter = 0;
     var city = setInterval(function () {
+        // do your thing
         step();
         counter++;
         if (counter === citySize) {
@@ -211,6 +215,7 @@ function city() {
             continueArray = [1, 2, 3, 4, 5, 6, 7, 8];
             counter = 0;
             var out = setInterval(function () {
+                // do your thing
                 step();
                 counter++;
                 if (counter === outSize) {
@@ -269,6 +274,7 @@ function country() {
 
     var counter = 0;
     var city = setInterval(function () {
+        // do your thing
         step();
         counter++;
         if (counter === citySize) {
@@ -276,6 +282,7 @@ function country() {
             continueArray = [1, 2, 3, 4, 5, 6, 7, 8];
             counter = 0;
             var out = setInterval(function () {
+                // do your thing
                 step();
                 counter++;
                 if (counter === outSize) {
