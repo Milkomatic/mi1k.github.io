@@ -29,7 +29,7 @@ label {
    /*.color: white;*/
    padding-top: 5%;
    padding-bottom: 5%;
-   border: 3px solid #FFa540;
+   border: 3px solid #ffaa00;
 }
 
 .pure-img-responsive {
@@ -105,7 +105,7 @@ label {
     border-bottom: 3px solid white;
 }
 .home-menu {
-    background: #FFa540;
+    background: #ffaa00;
 }
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
@@ -135,12 +135,12 @@ label {
 }
 
 a{
-   color: #33448e;
+   color: #b98000;
    cursor: pointer;
    text-decoration: none;
 }
 a:hover{
-   color: #33448e;
+   color: #ffbf00;
    text-decoration: underline;
 }
 
@@ -150,7 +150,7 @@ a:hover{
  */
 
 .splash-container {
-    background: #85CEE3;
+    background: #333;
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
@@ -174,7 +174,7 @@ a:hover{
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-   background: #FFa540;
+   background: #ffaa00;
     font-size: 20px;
     font-weight: bold;
     color: white;

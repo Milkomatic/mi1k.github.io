@@ -27,7 +27,7 @@ var ctx = canvas.getContext("2d");
 //Cell size
 var scale = 5;
 //world size
-var cells = new Array((500 / scale) + 2);
+var cells = new Array((500 / scale));
 var toUpdate = new Array();
 
 
@@ -48,27 +48,12 @@ function load() {
 
 //Draw the Cell
 function draw(x, y) {
-    var color = (cells[x][y].state === 1) ? "#ffbf00" : "#000";
+    var color = (cells[x][y].state === 1) ? "#ffbf00" : "#151515";
     ctx.beginPath();
     ctx.fillStyle = color;
 
-    ctx.rect((x - 1) * scale, (y - 1) * scale, scale, scale);
+    ctx.rect((x) * scale, (y) * scale, scale, scale);
     ctx.fill();
-}
-
-//find the cells number of neighbors
-function neighbors(x, y) {
-    var number = 0;
-    number = (cells[x + 1][y].state === 1) ? number + 1 : number;
-    number = (cells[x + 1][y + 1].state === 1) ? number + 1 : number;
-    number = (cells[x + 1][y - 1].state === 1) ? number + 1 : number;
-    number = (cells[x - 1][y].state === 1) ? number + 1 : number;
-    number = (cells[x - 1][y + 1].state === 1) ? number + 1 : number;
-    number = (cells[x - 1][y - 1].state === 1) ? number + 1 : number;
-    number = (cells[x][y + 1].state === 1) ? number + 1 : number;
-    number = (cells[x][y - 1].state === 1) ? number + 1 : number;
-
-    return number;
 }
 
 function neighborsTorus(x, y) {
@@ -191,8 +176,8 @@ function rand() {
 
     //clear();
 
-    for (var i = 1; i < cells.length - 1; i++) {
-        for (var j = 1; j < cells.length - 1; j++) {
+    for (var i = 0; i < cells.length; i++) {
+        for (var j = 0; j < cells.length; j++) {
             var state = Math.round(Math.random());
             cells[i][j].state = state;
             cells[i][j].gen = state;
@@ -248,78 +233,4 @@ function setRules() {
     $(".death:checked").each(function () {
         continueArray.push(parseInt($(this).val()));
     });
-}
-
-
-// This monster has it's own update and drawing functionality so that it only draws when its finished.
-function map() {
-
-    lifeArray = [3, 6, 7, 8];
-    continueArray = [3, 4, 6, 7, 8];
-
-    rand();
-
-    var topReached = false;
-
-    while (!topReached) {
-        for (var i = 1; i < cells.length - 1; i++) {
-            for (var j = 1; j < cells.length - 1; j++) {
-                lifeDeath(i, j);
-                if (cells[i][j].gen === 140) {
-                    topReached = true;
-                }
-            }
-        }
-        toUpdate.forEach(function (c) {
-            cells[c.x][c.y].state = c.toState;
-            cells[c.x][c.y].gen = c.toState;
-        });
-        toUpdate.length = 0;
-    }
-    for (var i = 0; i < cells.length; i++) {
-      for (var j = 0; j < cells.length; j++) {
-         ctx.beginPath();
-         ctx.fillStyle = "#84B9E3";
-
-         if (cells[i][j].gen >= 2 && cells[i][j].gen <= 10) {
-            ctx.beginPath();
-            ctx.fillStyle = "#B9E3FF";
-         }
-         if (cells[i][j].gen >= 11 && cells[i][j].gen <= 27) {
-            ctx.beginPath();
-            ctx.fillStyle = "#ACD0A5";
-         }
-         if (cells[i][j].gen >= 28 && cells[i][j].gen <= 52) {
-            ctx.beginPath();
-            ctx.fillStyle = "#84BF8B";
-         }
-         if (cells[i][j].gen >= 53 && cells[i][j].gen <= 78) {
-            ctx.beginPath();
-            ctx.fillStyle = "#0A480D";
-         }
-         if (cells[i][j].gen >= 79 && cells[i][j].gen <= 105) {
-            ctx.beginPath();
-            ctx.fillStyle = "#94BF8B";
-         }
-         if (cells[i][j].gen >= 106 && cells[i][j].gen <= 122) {
-            ctx.beginPath();
-            ctx.fillStyle = "#D3CA9D";
-         }
-         if (cells[i][j].gen >= 123 && cells[i][j].gen <= 126) {
-            ctx.beginPath();
-            ctx.fillStyle = "#C3A76B";
-         }
-         if (cells[i][j].gen >= 127 && cells[i][j].gen <= 133) {
-            ctx.beginPath();
-            ctx.fillStyle = "#a5a4a2";
-         }
-         if (cells[i][j].gen >= 134 && cells[i][j].gen <= 140) {
-            ctx.beginPath();
-            ctx.fillStyle = "#fff";
-         }
-         ctx.rect((i-1) * scale, (j-1) * scale, scale, scale);
-         ctx.fill();
-      }
-    }
-    setRules();
 }

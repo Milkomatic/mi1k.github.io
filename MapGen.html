@@ -6,7 +6,7 @@
       <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
 
       <!-- Custom styles for this template -->
-      <link href="css/automata.css" rel="stylesheet"> -->
+      <link href="css/automata.css" rel="stylesheet">
 
       <!-- SWC Icon -->
       <link rel="shortcut icon" href="img/icon.png">
@@ -60,16 +60,21 @@
 
          <div class="pure-u-1-2">
             <h1>Cellular Automata</h1>
-            <canvas id="board" width="600" height="600">
+            <canvas id="board" width="500" height="500">
                Your browser does not support the HTML5 canvas tag.</canvas>
             <br />
-            <button onclick="step()" class="pure-button-primary">Step</button>
-            <button id="play" class="pure-button-primary">play</button>
-            <button id="pause" class="pure-button-primary">pause</button>
-            <button onclick="load()" class="pure-button-primary">clear</button>
-            <button onclick="rand()" class="pure-button-primary">rand</button>
-            <button onclick="seed()" class="pure-button-primary">seed</button>
             <button onclick="map()" class="pure-button-primary">map</button>
+            <!--<input type="range" id="region0" value="0" max = "139">-->
+            <input type="range" id="region1" value="2" max = "139">
+            <input type="range" id="region2" value="11" max = "139">
+            <input type="range" id="region3" value="28" max = "139">
+            <input type="range" id="region4" value="53" max = "139">
+            <input type="range" id="region5" value="77" max = "139">
+            <input type="range" id="region6" value="104" max = "139">
+            <input type="range" id="region7" value="121" max = "139">
+            <input type="range" id="region8" value="127" max = "139">
+            <input type="range" id="region9" value="134" max = "139">
+            <button onclick="drawMap()" class="pure-button-primary">Redraw</button>
             <!-- <button onclick="learn()" class="pure-button-primary">Learn</button> -->
          </div>
          <!-- <div class="pure-u-1-4">
@@ -89,7 +94,6 @@
       <script src="js/bootstrap.min.js"></script>
       <!-- <script src="js/automataInJs.js"></script> -->
       <script src="js/automataMapGen.js"></script>
-      <script src="js/rules.js"></script>
       <!-- <script src="js/ml.js"></script> -->
       <!-- <script src="js/automataCities.js"></script> -->
    </body>

@@ -56,6 +56,8 @@
             8:<input type="checkbox" class="death" id="d8" value="8">
             <br>
             <button onclick="setRules()" class="pure-button-primary">Set New Rules</button>
+            <br>
+            <p>Click on the check boxes to make new rules, The rules will be applied as soon as you click the 'Set New Rules' button.</p>
          </div>
          <div class="pure-u-1-2">
             <h1>Cellular Automata</h1>
@@ -68,13 +70,12 @@
             <button onclick="load()" class="pure-button-primary">clear</button>
             <button onclick="rand()" class="pure-button-primary">rand</button>
             <button onclick="seed()" class="pure-button-primary">seed</button>
-            <button onclick="map()" class="pure-button-primary">map</button>
             <!-- <button onclick="learn()" class="pure-button-primary">Learn</button> -->
          </div>
          <div class="pure-u-1-4">
             <h3>Info</h3>
-            <p>Imagine each square is a cell. A Black square is "dead" and a colored square is "alive" A red cell was just born, while a blue cell has past through several generations.
-               These cells have special rules for when they become alive, and when they die. The default ruleset is called "Conway's Game of Life" its notation would be B3/S23 (Born: 3 / Survive: 2, 3) you can click on one of the rule sets to use them</p>
+            <p>Imagine each square is a cell. A Black square is "dead" and a colored square is "alive" These cells have special rules for when they become alive, and when they die. The default ruleset is called "Conway's Game of Life." 
+                You can click on one of the rule sets below to use them, you can also create your own rules!</p>
             <h4>Common Rules</h4>
             <p><a onclick="life()" >Life: B3/S23</a></p>
             <p><a onclick="replicator()">Replicator: B1357/S1357</a></p>
