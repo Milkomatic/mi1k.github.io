@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index Page</title>
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+    <link href="css/automata.css" rel="stylesheet"> -->
+
+    <!-- SWC Icon -->
+    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+    <link rel="stylesheet" href="css/automata.css">
+
+</head>
+
+<body onload="load();">
+    <div id="layout" class="pure-g">
+        <div class="sidebar pure-u-1 pure-u-md-1-4">
+            <div class="header">
+                <h1 class="brand-title">Scott Campbell</h1>
+                <h2 class="brand-tagline">Software Developer</h2>
+
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a class="pure-button" href="network">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="automata">Projects</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="content pure-u-1 pure-u-md-3-4">
+            <div class="pure-u-1-4 white-text">
+                <h3>Rules</h3>
+
+                Born:<br> 1:
+                <input type="checkbox" class="life" id="l1" value="1"> 2:
+                <input type="checkbox" class="life" id="l2" value="2"> 3:
+                <input type="checkbox" class="life" id="l3" value="3" checked="checked"> 4:
+                <input type="checkbox" class="life" id="l4" value="4"> 5:
+                <input type="checkbox" class="life" id="l5" value="5"> 6:
+                <input type="checkbox" class="life" id="l6" value="6"> 7:
+                <input type="checkbox" class="life" id="l7" value="7"> 8:
+                <input type="checkbox" class="life" id="l8" value="8">
+                <br> Survive:
+                <br> 1:
+                <input type="checkbox" class="death" id="d1" value="1"> 2:
+                <input type="checkbox" class="death" id="d2" value="2" checked="checked"> 3:
+                <input type="checkbox" class="death" id="d3" value="3" checked="checked"> 4:
+                <input type="checkbox" class="death" id="d4" value="4"> 5:
+                <input type="checkbox" class="death" id="d5" value="5"> 6:
+                <input type="checkbox" class="death" id="d6" value="6"> 7:
+                <input type="checkbox" class="death" id="d7" value="7"> 8:
+                <input type="checkbox" class="death" id="d8" value="8">
+                <br>
+                <button onclick="setRules()" class="pure-button-primary">Set New Rules</button>
+                <br>
+                <p>Click on the check boxes to make new rules, The rules will be applied as soon as you click the 'Set New Rules'
+                    button.
+                </p>
+            </div>
+            <div class="pure-u-1-2">
+                <h1>Cellular Automata</h1>
+                <canvas id="board" width="500" height="500" style="border:5px solid white;">
+                    Your browser does not support the HTML5 canvas tag.</canvas>
+                <br />
+                <button onclick="step()" class="pure-button-primary">Step</button>
+                <button id="play" class="pure-button-primary">play</button>
+                <button id="pause" class="pure-button-primary">pause</button>
+                <button onclick="load()" class="pure-button-primary">clear</button>
+                <button onclick="rand()" class="pure-button-primary">rand</button>
+                <button onclick="seed()" class="pure-button-primary">seed</button>
+                <!-- <button onclick="learn()" class="pure-button-primary">Learn</button> -->
+            </div>
+            <div class="pure-u-1-4">
+                <h3>Info</h3>
+                <p>Imagine each square is a cell. A Black square is "dead" and a colored square is "alive" These cells have special
+                    rules for when they become alive, and when they die. The default ruleset is called "Conway's Game of Life."
+                    You can click on one of the rule sets below to use them, you can also create your own rules!
+                </p>
+                <h4>Common Rules</h4>
+                <p><a onclick="life()">Life: B3/S23</a></p>
+                <p><a onclick="replicator()">Replicator: B1357/S1357</a></p>
+                <p><a onclick="dayNight()">Day & Night: B3678/S34678</a></p>
+                <p><a onclick="maze()">Maze: B3/S12345</a></p>
+                <p><a onclick="walledCities()">Walled Cities: B45678/S2345</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <!-- <script src="js/automataInJs.js"></script> -->
+    <!--<script src="js/automataColored.js"></script>-->
+    <script src="js/automataRevamped.js"></script>
+    <script src="js/rules.js"></script>
+    <!-- <script src="js/ml.js"></script> -->
+    <!-- <script src="js/automataCities.js"></script> -->
+</body>
+
+</html>
