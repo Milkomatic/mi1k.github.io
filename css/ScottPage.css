@@ -94,14 +94,16 @@ h3 {
     padding: 2em 1em 0;
 }
 
-.post {
-    padding-bottom: 2em;
-}
 .post-title {
     font-size: 2em;
     color: #222;
     margin-bottom: 0.2em;
 }
+
+.post-text {
+    padding: 1em;
+}
+
 .post-avatar {
     border-radius: 50px;
     float: right;
@@ -138,14 +140,19 @@ h3 {
         background: #df2d4f;
     }
 
-.post-images {
-    margin: 1em 0;
+.post-image-r {
+    /*margin-left: 1em;*/
+    border: #333 .5em solid; 
+}
+.post-image-l {
+    /*margin-left: -1em;*/
+    border: #333 .5em solid; 
 }
 .post-image-meta {
-    margin-top: -3.5em;
-    margin-left: 1em;
+    margin-top: -4em;
+    margin-left: 2em;
     color: #fff;
-    text-shadow: 0 1px 1px #333;
+    text-shadow: 2px 2px #333;
 }
 
 .footer {
