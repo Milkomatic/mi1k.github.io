@@ -24,10 +24,17 @@ var timer = null;
 var canvas = $("#board").get(0);
 var ctx = canvas.getContext("2d");
 
-//Cell size
 var scale = 4;
+
+var wWidth = window.innerWidth;
+
+if(wWidth < 400){
+    canvas.width = canvas.width-100;
+    canvas.height = canvas.height-100;
+    scale = 3 
+}
 //world size
-var cells = new Array((400 / scale));
+var cells = new Array((100));
 var toUpdate = new Array();
 
 
