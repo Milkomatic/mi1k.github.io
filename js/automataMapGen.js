@@ -135,7 +135,6 @@ function map() {
 }
 
 function drawMap() {
-  getSettings()
   for (var i = 0; i < cells.length; i++) {
     for (var j = 0; j < cells.length; j++) {
       ctx.beginPath();
@@ -151,13 +150,6 @@ function drawMap() {
 }
 
 //--------MAP SETTINGS-------
-
-function getSettings(){
-  for(i = 1; i < 10; i++){
-    MapSettings[i].min = $("#region"+i)[0].value;
-  }
-}
-
 
 var MapSettings = [
     {min: 0, color: "#84B9E3"},

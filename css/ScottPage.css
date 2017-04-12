@@ -6,11 +6,12 @@
 
 a {
     text-decoration: none;
-    color: rgb(61, 146, 201);
+    color: #b98000;
 }
 a:hover,
 a:focus {
     text-decoration: underline;
+    color: #ffbf00;
 }
 
 body {
@@ -49,6 +50,7 @@ h3 {
 }
 .brand-title {
     text-transform: uppercase;
+    word-wrap: break-word;
 }
 .brand-tagline {
     font-weight: 300;
