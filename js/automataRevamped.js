@@ -25,9 +25,9 @@ var canvas = $("#board").get(0);
 var ctx = canvas.getContext("2d");
 
 //Cell size
-var scale = 5;
+var scale = 4;
 //world size
-var cells = new Array((500 / scale));
+var cells = new Array((400 / scale));
 var toUpdate = new Array();
 
 
