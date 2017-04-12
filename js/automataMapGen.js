@@ -28,7 +28,7 @@ var scale = 4;
 
 var wWidth = window.innerWidth;
 
-if(wWidth < 400){
+if(wWidth < 420){
     canvas.width = canvas.width-100;
     canvas.height = canvas.height-100;
     scale = 3 
